@@ -12,16 +12,36 @@
 		327F487626D9D426004EE48D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F487526D9D426004EE48D /* ViewController.swift */; };
 		327F487B26D9D428004EE48D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 327F487A26D9D428004EE48D /* Assets.xcassets */; };
 		327F487E26D9D428004EE48D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 327F487C26D9D428004EE48D /* LaunchScreen.storyboard */; };
+		327F488626DBC01B004EE48D /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F488526DBC01B004EE48D /* ModalViewController.swift */; };
+		327F493326DF76D2004EE48D /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F493226DF76D2004EE48D /* MainTabController.swift */; };
+		327F493926DF7FA7004EE48D /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F493826DF7FA7004EE48D /* MessageViewController.swift */; };
+		327F493B26DF7FAF004EE48D /* AnoMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F493A26DF7FAF004EE48D /* AnoMessageViewController.swift */; };
+		327F493D26DF7FBB004EE48D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F493C26DF7FBB004EE48D /* ProfileViewController.swift */; };
+		327F494926DFA90A004EE48D /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F494826DFA90A004EE48D /* MessageView.swift */; };
+		327F494C26DFAD6D004EE48D /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F494B26DFAD6D004EE48D /* MessageCell.swift */; };
+		327F494F26DFAED1004EE48D /* URLImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F494E26DFAED1004EE48D /* URLImageViewModel.swift */; };
+		327F495126DFB0D2004EE48D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F495026DFB0D2004EE48D /* Message.swift */; };
+		327F495426DFB68F004EE48D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F495326DFB68F004EE48D /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		327F486E26D9D426004EE48D /* SitsumonHako.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SitsumonHako.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		327F487126D9D426004EE48D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		327F487326D9D426004EE48D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		327F487526D9D426004EE48D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		327F487526D9D426004EE48D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		327F487A26D9D428004EE48D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		327F487D26D9D428004EE48D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		327F487F26D9D428004EE48D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		327F488526DBC01B004EE48D /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		327F493226DF76D2004EE48D /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
+		327F493826DF7FA7004EE48D /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		327F493A26DF7FAF004EE48D /* AnoMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnoMessageViewController.swift; sourceTree = "<group>"; };
+		327F493C26DF7FBB004EE48D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		327F494826DFA90A004EE48D /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		327F494B26DFAD6D004EE48D /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		327F494E26DFAED1004EE48D /* URLImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageViewModel.swift; sourceTree = "<group>"; };
+		327F495026DFB0D2004EE48D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		327F495326DFB68F004EE48D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +74,72 @@
 		327F487026D9D426004EE48D /* SitsumonHako */ = {
 			isa = PBXGroup;
 			children = (
+				327F495226DFB677004EE48D /* Model */,
+				327F494D26DFAEA1004EE48D /* AcyncImage */,
+				327F494A26DFAD57004EE48D /* UI */,
+				327F493626DF7F6F004EE48D /* Message */,
+				327F493426DF7F2E004EE48D /* AnoMessage */,
+				327F493726DF7F78004EE48D /* Profile */,
 				327F487126D9D426004EE48D /* AppDelegate.swift */,
 				327F487326D9D426004EE48D /* SceneDelegate.swift */,
 				327F487526D9D426004EE48D /* ViewController.swift */,
+				327F493226DF76D2004EE48D /* MainTabController.swift */,
 				327F487A26D9D428004EE48D /* Assets.xcassets */,
 				327F487C26D9D428004EE48D /* LaunchScreen.storyboard */,
 				327F487F26D9D428004EE48D /* Info.plist */,
+				327F488526DBC01B004EE48D /* ModalViewController.swift */,
 			);
 			path = SitsumonHako;
+			sourceTree = "<group>";
+		};
+		327F493426DF7F2E004EE48D /* AnoMessage */ = {
+			isa = PBXGroup;
+			children = (
+				327F493A26DF7FAF004EE48D /* AnoMessageViewController.swift */,
+			);
+			path = AnoMessage;
+			sourceTree = "<group>";
+		};
+		327F493626DF7F6F004EE48D /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				327F493826DF7FA7004EE48D /* MessageViewController.swift */,
+				327F494826DFA90A004EE48D /* MessageView.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		327F493726DF7F78004EE48D /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				327F493C26DF7FBB004EE48D /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		327F494A26DFAD57004EE48D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				327F494B26DFAD6D004EE48D /* MessageCell.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		327F494D26DFAEA1004EE48D /* AcyncImage */ = {
+			isa = PBXGroup;
+			children = (
+				327F494E26DFAED1004EE48D /* URLImageViewModel.swift */,
+			);
+			path = AcyncImage;
+			sourceTree = "<group>";
+		};
+		327F495226DFB677004EE48D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				327F495026DFB0D2004EE48D /* Message.swift */,
+				327F495326DFB68F004EE48D /* User.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -133,8 +211,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				327F495426DFB68F004EE48D /* User.swift in Sources */,
+				327F488626DBC01B004EE48D /* ModalViewController.swift in Sources */,
+				327F494C26DFAD6D004EE48D /* MessageCell.swift in Sources */,
+				327F493926DF7FA7004EE48D /* MessageViewController.swift in Sources */,
 				327F487626D9D426004EE48D /* ViewController.swift in Sources */,
+				327F494926DFA90A004EE48D /* MessageView.swift in Sources */,
+				327F493D26DF7FBB004EE48D /* ProfileViewController.swift in Sources */,
+				327F493326DF76D2004EE48D /* MainTabController.swift in Sources */,
+				327F493B26DF7FAF004EE48D /* AnoMessageViewController.swift in Sources */,
 				327F487226D9D426004EE48D /* AppDelegate.swift in Sources */,
+				327F495126DFB0D2004EE48D /* Message.swift in Sources */,
+				327F494F26DFAED1004EE48D /* URLImageViewModel.swift in Sources */,
 				327F487426D9D426004EE48D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
