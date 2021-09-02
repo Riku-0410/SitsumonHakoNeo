@@ -11,13 +11,11 @@ class MainTabController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .red
         configureViewControllers()
-        // Do any additional setup after loading the view.
     }
     
     func configureViewControllers() {
-        let message = templateNavigationController(unselectedImage: UIImage(systemName: "person.crop.circle.badge.checkmark")!, selectedImage: UIImage(systemName: "person.crop.circle.fill.badge.checkmark")!, rootViewController: MessageViewController())
+        let message = templateNavigationController(unselectedImage: UIImage(systemName: "person.crop.circle.badge.checkmark")!, selectedImage: UIImage(systemName: "person.crop.circle.fill.badge.checkmark")!, rootViewController: MessageListViewController())
         let anoMessage = templateNavigationController(unselectedImage: UIImage(systemName: "person.crop.circle.badge.questionmark")!, selectedImage: UIImage(systemName: "person.crop.circle.badge.questionmark")!, rootViewController: AnoMessageViewController())
         let profile = templateNavigationController(unselectedImage: UIImage(systemName: "person.crop.circle")!, selectedImage: UIImage(systemName: "person.crop.circle.fill")!, rootViewController: ProfileViewController())
             

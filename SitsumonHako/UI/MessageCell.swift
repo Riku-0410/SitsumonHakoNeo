@@ -28,7 +28,7 @@ struct MessageCell: View {
                     Spacer()
             }
             Divider()
-        }.frame(maxWidth:.infinity)
+        }
     }
 }
 
