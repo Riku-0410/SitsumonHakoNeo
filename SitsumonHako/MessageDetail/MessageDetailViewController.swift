@@ -1,19 +1,17 @@
 //
-//  FeedController.swift
-//  InstagramCloneApp
+//  MessageDetailViewController.swift
+//  SitsumonHako
 //
-//  Created by Rikuya Shiraishi on 2021/09/01.
+//  Created by Rikuya Shiraishi on 2021/09/03.
 //
 
 import UIKit
 import SwiftUI
-class MessageListViewController: UIViewController, MessageListViewDelegate{
-    private let dataSource: MessageListView.DataSource = .init()
-    
+class MessageDetailViewController: UIViewController {
+    private let dataSource: MessageDetailView.DataSource = .init()
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
-        let rootView = MessageListView(delegate: self, dataSource: dataSource)
+        let rootView = MessageDetailView(dataSource: dataSource)
         let hostingVC = UIHostingController(rootView: rootView)
         addChild(hostingVC)
         view.addSubview(hostingVC.view)
@@ -28,11 +26,15 @@ class MessageListViewController: UIViewController, MessageListViewDelegate{
         NSLayoutConstraint.activate(constraints)
     }
     
-    func messageListViewDidTapMessageCell() {
-        let vc = MessageDetailViewController.init()
-        self.navigationController?.pushViewController(vc, animated: true)
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
     }
-    
-    
+    */
 
 }

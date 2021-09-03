@@ -22,9 +22,12 @@ struct MessageListView: View {
     
     var body: some View{
         ScrollView{
-            VStack{
+            VStack(){
                 ForEach(dataSource.recentMessage){ message in
-                    MessageCell(message:message).onTapGesture {
+                    MessageCell(message:message)
+                        .frame(maxWidth:.infinity, alignment: .leading)
+                        .background(Color.white)
+                    .onTapGesture {
                         delegate?.messageListViewDidTapMessageCell()
                     }
                 }
@@ -33,3 +36,9 @@ struct MessageListView: View {
     }
 }
 
+
+struct MessageListView_Previews: PreviewProvider {
+    static var previews: some View {
+        MessageListView(dataSource: .init())
+    }
+}
