@@ -28,6 +28,10 @@
 		327F496526E1C134004EE48D /* MessageDetailBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F496426E1C134004EE48D /* MessageDetailBubble.swift */; };
 		327F496826E24459004EE48D /* RegisterTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F496726E24458004EE48D /* RegisterTopView.swift */; };
 		327F496A26E24FC9004EE48D /* RegisterTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F496926E24FC9004EE48D /* RegisterTopViewController.swift */; };
+		327F496C26E32E29004EE48D /* RegisterUserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F496B26E32E29004EE48D /* RegisterUserInformationViewController.swift */; };
+		327F496E26E32E54004EE48D /* RegisterUserInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F496D26E32E54004EE48D /* RegisterUserInformationView.swift */; };
+		327F497026E33B4F004EE48D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F496F26E33B4F004EE48D /* CustomTextField.swift */; };
+		327F497426E393F1004EE48D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F497326E393F1004EE48D /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +58,10 @@
 		327F496426E1C134004EE48D /* MessageDetailBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailBubble.swift; sourceTree = "<group>"; };
 		327F496726E24458004EE48D /* RegisterTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTopView.swift; sourceTree = "<group>"; };
 		327F496926E24FC9004EE48D /* RegisterTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTopViewController.swift; sourceTree = "<group>"; };
+		327F496B26E32E29004EE48D /* RegisterUserInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInformationViewController.swift; sourceTree = "<group>"; };
+		327F496D26E32E54004EE48D /* RegisterUserInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInformationView.swift; sourceTree = "<group>"; };
+		327F496F26E33B4F004EE48D /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		327F497326E393F1004EE48D /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +144,7 @@
 				327F494B26DFAD6D004EE48D /* MessageCell.swift */,
 				327F496126E1C09D004EE48D /* MessageDetailCell.swift */,
 				327F496426E1C134004EE48D /* MessageDetailBubble.swift */,
+				327F496F26E33B4F004EE48D /* CustomTextField.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -163,6 +172,7 @@
 			children = (
 				327F494E26DFAED1004EE48D /* URLImageViewModel.swift */,
 				327F495F26E1BF4D004EE48D /* FlippedUpsideDown.swift */,
+				327F497326E393F1004EE48D /* Extension.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -172,6 +182,8 @@
 			children = (
 				327F496726E24458004EE48D /* RegisterTopView.swift */,
 				327F496926E24FC9004EE48D /* RegisterTopViewController.swift */,
+				327F496B26E32E29004EE48D /* RegisterUserInformationViewController.swift */,
+				327F496D26E32E54004EE48D /* RegisterUserInformationView.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -245,9 +257,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				327F497426E393F1004EE48D /* Extension.swift in Sources */,
 				327F495426DFB68F004EE48D /* User.swift in Sources */,
 				327F495A26E1BD4C004EE48D /* MessageDetailViewController.swift in Sources */,
 				327F494C26DFAD6D004EE48D /* MessageCell.swift in Sources */,
+				327F496C26E32E29004EE48D /* RegisterUserInformationViewController.swift in Sources */,
 				327F493926DF7FA7004EE48D /* MessageListViewController.swift in Sources */,
 				327F495626E1121F004EE48D /* AnoMessageView.swift in Sources */,
 				327F496A26E24FC9004EE48D /* RegisterTopViewController.swift in Sources */,
@@ -256,7 +270,9 @@
 				327F493D26DF7FBB004EE48D /* ProfileViewController.swift in Sources */,
 				327F493326DF76D2004EE48D /* MainTabController.swift in Sources */,
 				327F496826E24459004EE48D /* RegisterTopView.swift in Sources */,
+				327F497026E33B4F004EE48D /* CustomTextField.swift in Sources */,
 				327F495C26E1BD58004EE48D /* MessageDetailView.swift in Sources */,
+				327F496E26E32E54004EE48D /* RegisterUserInformationView.swift in Sources */,
 				327F496226E1C09D004EE48D /* MessageDetailCell.swift in Sources */,
 				327F493B26DF7FAF004EE48D /* AnoMessageViewController.swift in Sources */,
 				327F487226D9D426004EE48D /* AppDelegate.swift in Sources */,

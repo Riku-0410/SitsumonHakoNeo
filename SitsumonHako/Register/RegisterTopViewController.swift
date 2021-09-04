@@ -13,7 +13,7 @@ class RegisterTopViewController: UIViewController, RegisterTopViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blue
-        let rootView = RegisterTopView()
+        let rootView = RegisterTopView(delegate: self)
         let hostingVC = UIHostingController(rootView: rootView)
         addChild(hostingVC)
         view.addSubview(hostingVC.view)
@@ -27,20 +27,9 @@ class RegisterTopViewController: UIViewController, RegisterTopViewDelegate{
         ]
         NSLayoutConstraint.activate(constraints)
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func registerTopViewDidTapRegisterButton() {
-        let vc = MessageDetailViewController.init()
+        let vc = RegisterUserInformationViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
 

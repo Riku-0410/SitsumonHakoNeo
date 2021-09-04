@@ -17,7 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: scene)
         //TODO: temporary
-        window?.rootViewController = RegisterTopViewController()
+        let nav = UINavigationController(rootViewController: RegisterTopViewController())
+        window?.rootViewController = nav
         window?.makeKeyAndVisible()
     }
     
