@@ -1,19 +1,18 @@
 //
-//  RegisterUserInformationViewController.swift
+//  RegisterUserImageViewController.swift
 //  SitsumonHako
 //
-//  Created by Rikuya Shiraishi on 2021/09/04.
+//  Created by Rikuya Shiraishi on 2021/09/05.
 //
 
-import UIKit
 import SwiftUI
-
-class RegisterUserInformationViewController: UIViewController,RegisterUserInformationViewDelegate{
-
+import UIKit
+class RegisterUserImageViewController: UIViewController, RegisterUserImageViewDelegate{
+    private let dataSource: RegisterUserImageView.DataSource = .init()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blue
-        let rootView = RegisterUserInformationView(delegate:self)
+        let rootView = RegisterUserImageView(delegate: self, dataSource: dataSource)
         let hostingVC = UIHostingController(rootView: rootView)
         addChild(hostingVC)
         view.addSubview(hostingVC.view)
@@ -29,9 +28,12 @@ class RegisterUserInformationViewController: UIViewController,RegisterUserInform
         // Do any additional setup after loading the view.
     }
     
-    func RegisterUserInformationViewDidTapRegisterButton() {
-        let vc = RegisterUserImageViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+    func registerUserImageViewDidTapImage(){
+        let pickerContoller = UIImagePickerController()
+        pickerContoller.allowsEditing = true
+        pickerContoller.delegate = self
+        pickerContoller.sourceType = .photoLibrary
+        self.present(pickerContoller, animated: true)
     }
 
     /*
@@ -44,4 +46,18 @@ class RegisterUserInformationViewController: UIViewController,RegisterUserInform
     }
     */
 
+}
+
+extension RegisterUserImageViewController: UIImagePickerControllerDelegate , UINavigationControllerDelegate{
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[.originalImage] as? UIImage{
+            self.dataSource.userImage = image
+        }
+        
+        dismiss(animated: true)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+    }
 }
