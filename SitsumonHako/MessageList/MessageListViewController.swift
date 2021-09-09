@@ -13,6 +13,7 @@ class MessageListViewController: UIViewController, MessageListViewDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blue
+        self.navigationItem.title = "message"
         let rootView = MessageListView(delegate: self, dataSource: dataSource)
         let hostingVC = UIHostingController(rootView: rootView)
         addChild(hostingVC)
@@ -30,6 +31,7 @@ class MessageListViewController: UIViewController, MessageListViewDelegate{
     
     func messageListViewDidTapMessageCell() {
         let vc = MessageDetailViewController()
+        vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

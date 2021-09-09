@@ -23,10 +23,16 @@ struct RegisterUserImageView: View {
             VStack(spacing:24){
                 if let image = dataSource.userImage{
                     Image(uiImage: image)
+                        .resizable()
+                        .frame(width: 150, height: 150, alignment: .center)
+                        .scaledToFit()
+                        .background(Circle())
+                        
                 }else{
                     Circle()
                         .stroke(Color(hex: "B0B6BD"),lineWidth: 1)
                         .frame(width: 150, height: 150, alignment: .center)
+                        .background(Color.white)
                         .onTapGesture {
                             delegate?.registerUserImageViewDidTapImage()
                             print("didtap")

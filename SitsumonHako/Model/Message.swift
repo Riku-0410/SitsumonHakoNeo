@@ -13,6 +13,7 @@ struct Message: Identifiable{
     let toId: String
     let fromId: String
     let read: Bool
+    let isFromCurrentUser:Bool
     let id: String
     
     init(user: User, dictionary: [String:Any]){
@@ -21,6 +22,7 @@ struct Message: Identifiable{
         self.toId = dictionary["toId"] as? String ?? ""
         self.fromId = dictionary["fromId"] as? String ?? ""
         self.read = dictionary["read"] as? Bool ?? false
+        self.isFromCurrentUser = fromId == "2"
         self.id = dictionary["id"] as? String ?? ""
     }
 }
