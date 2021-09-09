@@ -107,6 +107,8 @@ extension MessageDetailInputViewField {
                     self?.parent.height = size.height
                 }
             }
+            
+            
 
         }
     }
