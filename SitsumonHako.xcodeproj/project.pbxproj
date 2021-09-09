@@ -35,6 +35,10 @@
 		327F499526E4875F004EE48D /* RegisterUserImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F499426E4875F004EE48D /* RegisterUserImageView.swift */; };
 		327F499726E49A7B004EE48D /* RegisterUserImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F499626E49A7A004EE48D /* RegisterUserImageViewController.swift */; };
 		327F499926E79774004EE48D /* MessageDetailInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F499826E79773004EE48D /* MessageDetailInputView.swift */; };
+		32F6AEF326E9F1750046B462 /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F6AEF226E9F1750046B462 /* NewMessageView.swift */; };
+		32F6AEF526E9F1C80046B462 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F6AEF426E9F1C80046B462 /* UserCell.swift */; };
+		32F6AEF726E9F6180046B462 /* NewMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F6AEF626E9F6180046B462 /* NewMessageViewController.swift */; };
+		32F6AEF926E9F9C60046B462 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F6AEF826E9F9C60046B462 /* SearchBar.swift */; };
 		52D8D7973E071C395112C004 /* Pods_SitsumonHako.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D27D59E881B037BB21AD477 /* Pods_SitsumonHako.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +73,10 @@
 		327F499426E4875F004EE48D /* RegisterUserImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserImageView.swift; sourceTree = "<group>"; };
 		327F499626E49A7A004EE48D /* RegisterUserImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserImageViewController.swift; sourceTree = "<group>"; };
 		327F499826E79773004EE48D /* MessageDetailInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailInputView.swift; sourceTree = "<group>"; };
+		32F6AEF226E9F1750046B462 /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
+		32F6AEF426E9F1C80046B462 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		32F6AEF626E9F6180046B462 /* NewMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageViewController.swift; sourceTree = "<group>"; };
+		32F6AEF826E9F9C60046B462 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		3F92905709669B3D3D8DCEB0 /* Pods-SitsumonHako.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SitsumonHako.release.xcconfig"; path = "Target Support Files/Pods-SitsumonHako/Pods-SitsumonHako.release.xcconfig"; sourceTree = "<group>"; };
 		63BC4BA9347B540561777517 /* Pods-SitsumonHako.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SitsumonHako.debug.xcconfig"; path = "Target Support Files/Pods-SitsumonHako/Pods-SitsumonHako.debug.xcconfig"; sourceTree = "<group>"; };
 		9D27D59E881B037BB21AD477 /* Pods_SitsumonHako.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SitsumonHako.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,13 +115,14 @@
 		327F487026D9D426004EE48D /* SitsumonHako */ = {
 			isa = PBXGroup;
 			children = (
-				327F496626E24412004EE48D /* Register */,
-				327F495D26E1BEE2004EE48D /* Util */,
 				327F495826E1BCE5004EE48D /* MessageDetail */,
-				327F495226DFB677004EE48D /* Model */,
-				327F494A26DFAD57004EE48D /* UI */,
+				32F6AEF126E9F1050046B462 /* NewMessage */,
 				327F493626DF7F6F004EE48D /* MessageList */,
+				327F495D26E1BEE2004EE48D /* Util */,
+				327F496626E24412004EE48D /* Register */,
 				327F493426DF7F2E004EE48D /* AnoMessage */,
+				327F494A26DFAD57004EE48D /* UI */,
+				327F495226DFB677004EE48D /* Model */,
 				327F493726DF7F78004EE48D /* Profile */,
 				327F487126D9D426004EE48D /* AppDelegate.swift */,
 				327F487326D9D426004EE48D /* SceneDelegate.swift */,
@@ -159,6 +168,8 @@
 				327F496426E1C134004EE48D /* MessageDetailBubble.swift */,
 				327F496F26E33B4F004EE48D /* CustomTextField.swift */,
 				327F499826E79773004EE48D /* MessageDetailInputView.swift */,
+				32F6AEF426E9F1C80046B462 /* UserCell.swift */,
+				32F6AEF826E9F9C60046B462 /* SearchBar.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -204,13 +215,21 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
+		32F6AEF126E9F1050046B462 /* NewMessage */ = {
+			isa = PBXGroup;
+			children = (
+				32F6AEF226E9F1750046B462 /* NewMessageView.swift */,
+				32F6AEF626E9F6180046B462 /* NewMessageViewController.swift */,
+			);
+			path = NewMessage;
+			sourceTree = "<group>";
+		};
 		5074CB4A7B9E5A6EF96B0068 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				63BC4BA9347B540561777517 /* Pods-SitsumonHako.debug.xcconfig */,
 				3F92905709669B3D3D8DCEB0 /* Pods-SitsumonHako.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -317,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32F6AEF326E9F1750046B462 /* NewMessageView.swift in Sources */,
 				327F499926E79774004EE48D /* MessageDetailInputView.swift in Sources */,
 				327F497426E393F1004EE48D /* Extension.swift in Sources */,
 				327F495426DFB68F004EE48D /* User.swift in Sources */,
@@ -331,11 +351,14 @@
 				327F493D26DF7FBB004EE48D /* ProfileViewController.swift in Sources */,
 				327F493326DF76D2004EE48D /* MainTabController.swift in Sources */,
 				327F496826E24459004EE48D /* RegisterTopView.swift in Sources */,
+				32F6AEF726E9F6180046B462 /* NewMessageViewController.swift in Sources */,
 				327F497026E33B4F004EE48D /* CustomTextField.swift in Sources */,
+				32F6AEF926E9F9C60046B462 /* SearchBar.swift in Sources */,
 				327F495C26E1BD58004EE48D /* MessageDetailView.swift in Sources */,
 				327F499726E49A7B004EE48D /* RegisterUserImageViewController.swift in Sources */,
 				327F496E26E32E54004EE48D /* RegisterUserInformationView.swift in Sources */,
 				327F499526E4875F004EE48D /* RegisterUserImageView.swift in Sources */,
+				32F6AEF526E9F1C80046B462 /* UserCell.swift in Sources */,
 				327F496226E1C09D004EE48D /* MessageDetailCell.swift in Sources */,
 				327F493B26DF7FAF004EE48D /* AnoMessageViewController.swift in Sources */,
 				327F487226D9D426004EE48D /* AppDelegate.swift in Sources */,

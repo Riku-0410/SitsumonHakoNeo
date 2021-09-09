@@ -10,6 +10,7 @@ import SwiftUI
 
 protocol MessageListViewDelegate: AnyObject {
     func messageListViewDidTapMessageCell()
+    func messageListViewDidTapNewMessageButton()
 }
 
 struct MessageListView: View {
@@ -21,18 +22,42 @@ struct MessageListView: View {
     @ObservedObject var dataSource: DataSource
     
     var body: some View{
-        ScrollView{
-            VStack(){
-                ForEach(dataSource.recentMessage){ message in
-                    MessageCell(message:message)
-                        .frame(maxWidth:.infinity, alignment: .leading)
-                        .background(Color.white)
-                    .onTapGesture {
-                        delegate?.messageListViewDidTapMessageCell()
+        ZStack(alignment:.bottomTrailing){
+            ScrollView{
+                VStack(){
+                    ForEach(dataSource.recentMessage){ message in
+                        MessageCell(message:message)
+                            .frame(maxWidth:.infinity, alignment: .leading)
+                            .background(Color.white)
+                        .onTapGesture {
+                            delegate?.messageListViewDidTapMessageCell()
+                        }
                     }
                 }
             }
+            newMessageButton
         }
+    }
+    
+    var newMessageButton: some View {
+        HStack{
+            Spacer()
+            Button(action: {
+                self.delegate?.messageListViewDidTapNewMessageButton()
+            }, label: {
+                Image(systemName: "envelope")
+                    .resizable()
+                    .font(Font.title.weight(.light))
+                    .scaledToFit()
+                    .frame(width: 40, height: 40)
+                    .padding()
+            })
+            .background(Color(hex: "4B98E5"))
+            .foregroundColor(.white)
+            .clipShape(Circle())
+            .padding()
+        }
+        
     }
 }
 

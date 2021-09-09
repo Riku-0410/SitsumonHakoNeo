@@ -1,20 +1,20 @@
 //
-//  FeedController.swift
-//  InstagramCloneApp
+//  NewMessageViewController.swift
+//  SitsumonHako
 //
-//  Created by Rikuya Shiraishi on 2021/09/01.
+//  Created by Rikuya Shiraishi on 2021/09/09.
 //
 
 import UIKit
 import SwiftUI
-class MessageListViewController: UIViewController, MessageListViewDelegate{
-    private let dataSource: MessageListView.DataSource = .init()
+class NewMessageViewController: UIViewController,NewMessageViewDelegate {
+    private let dataSource: NewMessageView.DataSource = .init()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blue
-        self.navigationItem.title = "message"
-        let rootView = MessageListView(delegate: self, dataSource: dataSource)
+        self.navigationItem.title = "new message"
+        let rootView = NewMessageView(delegate: self, dataSource: dataSource)
         let hostingVC = UIHostingController(rootView: rootView)
         addChild(hostingVC)
         view.addSubview(hostingVC.view)
@@ -27,17 +27,6 @@ class MessageListViewController: UIViewController, MessageListViewDelegate{
             view.rightAnchor.constraint(equalTo: hostingVC.view.rightAnchor)
         ]
         NSLayoutConstraint.activate(constraints)
-    }
-    
-    func messageListViewDidTapMessageCell() {
-        let vc = MessageDetailViewController()
-        vc.hidesBottomBarWhenPushed = true
-        self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    func messageListViewDidTapNewMessageButton() {
-        let vc = NewMessageViewController()
-        present(vc, animated: true)
     }
 
 }

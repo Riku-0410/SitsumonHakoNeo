@@ -29,6 +29,7 @@ struct MessageDetailView: View {
             MessageDetailInputView(text:$text)
         }
     }
+    
 }
 
 struct MessageDetailView_Previews: PreviewProvider {
