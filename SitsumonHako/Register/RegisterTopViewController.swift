@@ -1,20 +1,19 @@
 //
-//  FeedController.swift
-//  InstagramCloneApp
+//  RegisterTopViewController.swift
+//  SitsumonHako
 //
-//  Created by Rikuya Shiraishi on 2021/09/01.
+//  Created by Rikuya Shiraishi on 2021/09/03.
 //
 
 import UIKit
 import SwiftUI
-class MessageListViewController: UIViewController, MessageListViewDelegate{
-    private let dataSource: MessageListView.DataSource = .init()
+
+class RegisterTopViewController: UIViewController, RegisterTopViewDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blue
-        self.navigationItem.title = "message"
-        let rootView = MessageListView(delegate: self, dataSource: dataSource)
+        let rootView = RegisterTopView(delegate: self)
         let hostingVC = UIHostingController(rootView: rootView)
         addChild(hostingVC)
         view.addSubview(hostingVC.view)
@@ -29,12 +28,9 @@ class MessageListViewController: UIViewController, MessageListViewDelegate{
         NSLayoutConstraint.activate(constraints)
     }
     
-    func messageListViewDidTapMessageCell() {
-        let vc = MessageDetailViewController()
-        vc.hidesBottomBarWhenPushed = true
+    func registerTopViewDidTapRegisterButton() {
+        let vc = RegisterUserInformationViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
-    
-    
 
 }

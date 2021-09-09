@@ -26,6 +26,16 @@
 		327F496026E1BF4D004EE48D /* FlippedUpsideDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F495F26E1BF4D004EE48D /* FlippedUpsideDown.swift */; };
 		327F496226E1C09D004EE48D /* MessageDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F496126E1C09D004EE48D /* MessageDetailCell.swift */; };
 		327F496526E1C134004EE48D /* MessageDetailBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F496426E1C134004EE48D /* MessageDetailBubble.swift */; };
+		327F496826E24459004EE48D /* RegisterTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F496726E24458004EE48D /* RegisterTopView.swift */; };
+		327F496A26E24FC9004EE48D /* RegisterTopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F496926E24FC9004EE48D /* RegisterTopViewController.swift */; };
+		327F496C26E32E29004EE48D /* RegisterUserInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F496B26E32E29004EE48D /* RegisterUserInformationViewController.swift */; };
+		327F496E26E32E54004EE48D /* RegisterUserInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F496D26E32E54004EE48D /* RegisterUserInformationView.swift */; };
+		327F497026E33B4F004EE48D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F496F26E33B4F004EE48D /* CustomTextField.swift */; };
+		327F497426E393F1004EE48D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F497326E393F1004EE48D /* Extension.swift */; };
+		327F499526E4875F004EE48D /* RegisterUserImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F499426E4875F004EE48D /* RegisterUserImageView.swift */; };
+		327F499726E49A7B004EE48D /* RegisterUserImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F499626E49A7A004EE48D /* RegisterUserImageViewController.swift */; };
+		327F499926E79774004EE48D /* MessageDetailInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F499826E79773004EE48D /* MessageDetailInputView.swift */; };
+		52D8D7973E071C395112C004 /* Pods_SitsumonHako.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D27D59E881B037BB21AD477 /* Pods_SitsumonHako.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +60,18 @@
 		327F495F26E1BF4D004EE48D /* FlippedUpsideDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlippedUpsideDown.swift; sourceTree = "<group>"; };
 		327F496126E1C09D004EE48D /* MessageDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailCell.swift; sourceTree = "<group>"; };
 		327F496426E1C134004EE48D /* MessageDetailBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailBubble.swift; sourceTree = "<group>"; };
+		327F496726E24458004EE48D /* RegisterTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTopView.swift; sourceTree = "<group>"; };
+		327F496926E24FC9004EE48D /* RegisterTopViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterTopViewController.swift; sourceTree = "<group>"; };
+		327F496B26E32E29004EE48D /* RegisterUserInformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInformationViewController.swift; sourceTree = "<group>"; };
+		327F496D26E32E54004EE48D /* RegisterUserInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserInformationView.swift; sourceTree = "<group>"; };
+		327F496F26E33B4F004EE48D /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		327F497326E393F1004EE48D /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		327F499426E4875F004EE48D /* RegisterUserImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserImageView.swift; sourceTree = "<group>"; };
+		327F499626E49A7A004EE48D /* RegisterUserImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserImageViewController.swift; sourceTree = "<group>"; };
+		327F499826E79773004EE48D /* MessageDetailInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailInputView.swift; sourceTree = "<group>"; };
+		3F92905709669B3D3D8DCEB0 /* Pods-SitsumonHako.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SitsumonHako.release.xcconfig"; path = "Target Support Files/Pods-SitsumonHako/Pods-SitsumonHako.release.xcconfig"; sourceTree = "<group>"; };
+		63BC4BA9347B540561777517 /* Pods-SitsumonHako.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SitsumonHako.debug.xcconfig"; path = "Target Support Files/Pods-SitsumonHako/Pods-SitsumonHako.debug.xcconfig"; sourceTree = "<group>"; };
+		9D27D59E881B037BB21AD477 /* Pods_SitsumonHako.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SitsumonHako.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52D8D7973E071C395112C004 /* Pods_SitsumonHako.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +91,8 @@
 			children = (
 				327F487026D9D426004EE48D /* SitsumonHako */,
 				327F486F26D9D426004EE48D /* Products */,
+				8FCD2259C12972D694E308C7 /* Frameworks */,
+				5074CB4A7B9E5A6EF96B0068 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -82,6 +107,7 @@
 		327F487026D9D426004EE48D /* SitsumonHako */ = {
 			isa = PBXGroup;
 			children = (
+				327F496626E24412004EE48D /* Register */,
 				327F495D26E1BEE2004EE48D /* Util */,
 				327F495826E1BCE5004EE48D /* MessageDetail */,
 				327F495226DFB677004EE48D /* Model */,
@@ -131,6 +157,8 @@
 				327F494B26DFAD6D004EE48D /* MessageCell.swift */,
 				327F496126E1C09D004EE48D /* MessageDetailCell.swift */,
 				327F496426E1C134004EE48D /* MessageDetailBubble.swift */,
+				327F496F26E33B4F004EE48D /* CustomTextField.swift */,
+				327F499826E79773004EE48D /* MessageDetailInputView.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -158,8 +186,40 @@
 			children = (
 				327F494E26DFAED1004EE48D /* URLImageViewModel.swift */,
 				327F495F26E1BF4D004EE48D /* FlippedUpsideDown.swift */,
+				327F497326E393F1004EE48D /* Extension.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		327F496626E24412004EE48D /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				327F496726E24458004EE48D /* RegisterTopView.swift */,
+				327F496926E24FC9004EE48D /* RegisterTopViewController.swift */,
+				327F496B26E32E29004EE48D /* RegisterUserInformationViewController.swift */,
+				327F496D26E32E54004EE48D /* RegisterUserInformationView.swift */,
+				327F499426E4875F004EE48D /* RegisterUserImageView.swift */,
+				327F499626E49A7A004EE48D /* RegisterUserImageViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		5074CB4A7B9E5A6EF96B0068 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63BC4BA9347B540561777517 /* Pods-SitsumonHako.debug.xcconfig */,
+				3F92905709669B3D3D8DCEB0 /* Pods-SitsumonHako.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8FCD2259C12972D694E308C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9D27D59E881B037BB21AD477 /* Pods_SitsumonHako.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,6 +229,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 327F488226D9D428004EE48D /* Build configuration list for PBXNativeTarget "SitsumonHako" */;
 			buildPhases = (
+				CFBCD2126E01FFDCD222DF5F /* [CP] Check Pods Manifest.lock */,
 				327F486A26D9D426004EE48D /* Sources */,
 				327F486B26D9D426004EE48D /* Frameworks */,
 				327F486C26D9D426004EE48D /* Resources */,
@@ -226,21 +287,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		CFBCD2126E01FFDCD222DF5F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SitsumonHako-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		327F486A26D9D426004EE48D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				327F499926E79774004EE48D /* MessageDetailInputView.swift in Sources */,
+				327F497426E393F1004EE48D /* Extension.swift in Sources */,
 				327F495426DFB68F004EE48D /* User.swift in Sources */,
 				327F495A26E1BD4C004EE48D /* MessageDetailViewController.swift in Sources */,
 				327F494C26DFAD6D004EE48D /* MessageCell.swift in Sources */,
+				327F496C26E32E29004EE48D /* RegisterUserInformationViewController.swift in Sources */,
 				327F493926DF7FA7004EE48D /* MessageListViewController.swift in Sources */,
 				327F495626E1121F004EE48D /* AnoMessageView.swift in Sources */,
+				327F496A26E24FC9004EE48D /* RegisterTopViewController.swift in Sources */,
 				327F494926DFA90A004EE48D /* MessageListView.swift in Sources */,
 				327F496026E1BF4D004EE48D /* FlippedUpsideDown.swift in Sources */,
 				327F493D26DF7FBB004EE48D /* ProfileViewController.swift in Sources */,
 				327F493326DF76D2004EE48D /* MainTabController.swift in Sources */,
+				327F496826E24459004EE48D /* RegisterTopView.swift in Sources */,
+				327F497026E33B4F004EE48D /* CustomTextField.swift in Sources */,
 				327F495C26E1BD58004EE48D /* MessageDetailView.swift in Sources */,
+				327F499726E49A7B004EE48D /* RegisterUserImageViewController.swift in Sources */,
+				327F496E26E32E54004EE48D /* RegisterUserInformationView.swift in Sources */,
+				327F499526E4875F004EE48D /* RegisterUserImageView.swift in Sources */,
 				327F496226E1C09D004EE48D /* MessageDetailCell.swift in Sources */,
 				327F493B26DF7FAF004EE48D /* AnoMessageViewController.swift in Sources */,
 				327F487226D9D426004EE48D /* AppDelegate.swift in Sources */,
@@ -383,6 +478,7 @@
 		};
 		327F488326D9D428004EE48D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63BC4BA9347B540561777517 /* Pods-SitsumonHako.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -402,6 +498,7 @@
 		};
 		327F488426D9D428004EE48D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F92905709669B3D3D8DCEB0 /* Pods-SitsumonHako.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
