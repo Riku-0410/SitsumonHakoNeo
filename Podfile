@@ -6,5 +6,9 @@ target 'SitsumonHako' do
   use_frameworks!
 
   # Pods for SitsumonHako
-
+    pod 'RxSwift', '6.2.0'
+    pod 'RxCocoa', '6.2.0'
+    pod 'Firebase/Analytics'
+    pod 'Firebase/Auth'
+    pod 'Firebase/Firestore'
 end

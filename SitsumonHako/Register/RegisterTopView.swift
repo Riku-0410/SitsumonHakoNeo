@@ -10,7 +10,7 @@ import SwiftUI
 protocol RegisterTopViewDelegate: AnyObject {
     func registerTopViewDidTapRegisterButton()
 }
-
+//TODO:登録のとこだけviewmodel作らないでそのままControllerで登録する
 struct RegisterTopView: View {
     var screenSize = UIScreen.main.bounds.size
     weak var delegate: RegisterTopViewDelegate?

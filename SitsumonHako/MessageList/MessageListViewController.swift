@@ -39,5 +39,7 @@ class MessageListViewController: UIViewController, MessageListViewDelegate{
         let vc = NewMessageViewController()
         present(vc, animated: true)
     }
+    
+    //この辺で普通にviewmodel.fetchMessageとかで返り値datasourceにながせばよい？
 
 }
