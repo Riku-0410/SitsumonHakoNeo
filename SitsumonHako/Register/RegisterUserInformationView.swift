@@ -15,11 +15,12 @@ struct RegisterUserInformationView: View {
     class DataSource: ObservableObject{
         @Published var userImage:UIImage? = nil
         @Published var userSession: FirebaseAuth.User?
+        @Published var userID:String = ""
+        @Published var nickName:String = ""
+        @Published var anoNickName:String = ""
     }
     @ObservedObject var dataSource: DataSource
-    @State var userID:String = ""
-    @State var nickName:String = ""
-    @State var anoNickName:String = ""
+    @StateObject var registerInformation: RegisterInformation = RegisterInformation()
     weak var delegate:RegisterUserInformationViewDelegate?
     var body: some View {
         ScrollView{
@@ -62,11 +63,11 @@ struct RegisterUserInformationView: View {
     
     var registerUserInformationSection: some View {
         VStack(alignment:.leading,spacing:12){
-            CustomTextFieldView(text: $userID,title:"ユーザーID")
-            CustomTextFieldView(text: $nickName, title:"ニックネーム")
-            CustomTextFieldView(text: $anoNickName, title:"匿名用ニックネーム" ,caution:"※特定できない名前")
+            CustomTextFieldView(text: $dataSource.userID,title:"ユーザーID")
+            CustomTextFieldView(text: $dataSource.nickName, title:"ニックネーム")
+            CustomTextFieldView(text: $dataSource.anoNickName, title:"匿名用ニックネーム" ,caution:"※特定できない名前")
             Button(action:{
-                delegate?.registerUserInformationViewDidTapRegisterButton(userID: userID, nickName: nickName, anoNickName: anoNickName)
+                delegate?.registerUserInformationViewDidTapRegisterButton(userID: dataSource.userID, nickName: dataSource.nickName, anoNickName: dataSource.anoNickName)
             }){
                 Text("登録")
                     .foregroundColor(.white)
@@ -89,6 +90,6 @@ struct RegisterUserInformationView: View {
 
 struct RegisterUserInformation_Preview: PreviewProvider {
     static var previews: some View {
-        RegisterUserInformationView(dataSource: .init(), userID: "")
+        RegisterUserInformationView(dataSource: .init())
     }
 }

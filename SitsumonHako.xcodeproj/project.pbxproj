@@ -38,7 +38,8 @@
 		32F6AEF726E9F6180046B462 /* NewMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F6AEF626E9F6180046B462 /* NewMessageViewController.swift */; };
 		32F6AEF926E9F9C60046B462 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F6AEF826E9F9C60046B462 /* SearchBar.swift */; };
 		32F6AF0826EB26560046B462 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F6AF0726EB26560046B462 /* AuthService.swift */; };
-		32F6AF0A26EB36D80046B462 /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = 32F6AF0926EB36D70046B462 /* GoogleService-Info (1).plist */; };
+		32F6AF1026EF17510046B462 /* RegisterInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F6AF0F26EF17510046B462 /* RegisterInformation.swift */; };
+		32F6AF5226EF34310046B462 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32F6AF5126EF34310046B462 /* GoogleService-Info.plist */; };
 		52D8D7973E071C395112C004 /* Pods_SitsumonHako.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D27D59E881B037BB21AD477 /* Pods_SitsumonHako.framework */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +77,8 @@
 		32F6AEF626E9F6180046B462 /* NewMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageViewController.swift; sourceTree = "<group>"; };
 		32F6AEF826E9F9C60046B462 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		32F6AF0726EB26560046B462 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		32F6AF0926EB36D70046B462 /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info (1).plist"; sourceTree = "<group>"; };
+		32F6AF0F26EF17510046B462 /* RegisterInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInformation.swift; sourceTree = "<group>"; };
+		32F6AF5126EF34310046B462 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F92905709669B3D3D8DCEB0 /* Pods-SitsumonHako.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SitsumonHako.release.xcconfig"; path = "Target Support Files/Pods-SitsumonHako/Pods-SitsumonHako.release.xcconfig"; sourceTree = "<group>"; };
 		63BC4BA9347B540561777517 /* Pods-SitsumonHako.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SitsumonHako.debug.xcconfig"; path = "Target Support Files/Pods-SitsumonHako/Pods-SitsumonHako.debug.xcconfig"; sourceTree = "<group>"; };
 		9D27D59E881B037BB21AD477 /* Pods_SitsumonHako.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SitsumonHako.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -97,6 +99,7 @@
 		327F486526D9D426004EE48D = {
 			isa = PBXGroup;
 			children = (
+				32F6AF5126EF34310046B462 /* GoogleService-Info.plist */,
 				327F487026D9D426004EE48D /* SitsumonHako */,
 				327F486F26D9D426004EE48D /* Products */,
 				8FCD2259C12972D694E308C7 /* Frameworks */,
@@ -115,7 +118,6 @@
 		327F487026D9D426004EE48D /* SitsumonHako */ = {
 			isa = PBXGroup;
 			children = (
-				32F6AF0926EB36D70046B462 /* GoogleService-Info (1).plist */,
 				32F6AF0626EB26350046B462 /* Service */,
 				327F495826E1BCE5004EE48D /* MessageDetail */,
 				32F6AEF126E9F1050046B462 /* NewMessage */,
@@ -181,6 +183,7 @@
 			children = (
 				327F495026DFB0D2004EE48D /* Message.swift */,
 				327F495326DFB68F004EE48D /* User.swift */,
+				32F6AF0F26EF17510046B462 /* RegisterInformation.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -308,8 +311,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32F6AF5226EF34310046B462 /* GoogleService-Info.plist in Resources */,
 				327F487E26D9D428004EE48D /* LaunchScreen.storyboard in Resources */,
-				32F6AF0A26EB36D80046B462 /* GoogleService-Info (1).plist in Resources */,
 				327F487B26D9D428004EE48D /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -367,6 +370,7 @@
 				327F499926E79774004EE48D /* MessageDetailInputView.swift in Sources */,
 				327F497426E393F1004EE48D /* Extension.swift in Sources */,
 				327F495426DFB68F004EE48D /* User.swift in Sources */,
+				32F6AF1026EF17510046B462 /* RegisterInformation.swift in Sources */,
 				32F6AF0826EB26560046B462 /* AuthService.swift in Sources */,
 				327F495A26E1BD4C004EE48D /* MessageDetailViewController.swift in Sources */,
 				327F494C26DFAD6D004EE48D /* MessageCell.swift in Sources */,

@@ -10,10 +10,14 @@ import SwiftUI
 import Firebase
 import FirebaseFirestore
 import FirebaseAuth
+import RxSwift
+import RxCocoa
 class RegisterUserInformationViewController: UIViewController,RegisterUserInformationViewDelegate{
-
-    
+    private let disposeBag = DisposeBag()
     private let dataSource: RegisterUserInformationView.DataSource = .init()
+    func bind(){
+
+    }
     var service:AuthService = AuthService()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +36,14 @@ class RegisterUserInformationViewController: UIViewController,RegisterUserInform
         ]
         NSLayoutConstraint.activate(constraints)
         // Do any additional setup after loading the view.
+        
     }
 
     
     func registerUserInformationViewDidTapRegisterButton(userID:String,nickName:String,anoNickName:String) {
-        Auth.auth().signInAnonymously(completion: ){ (authResult, error) in
+        Auth.auth().signInAnonymously(){ (authResult, error) in
             if let error = error{
-                
+                print(error)
             }
             guard let user = authResult?.user else { return }
             let data = [
@@ -47,7 +52,7 @@ class RegisterUserInformationViewController: UIViewController,RegisterUserInform
                 "uid":user.uid,
                 "anouid":userID
             ]
-            
+
             Firestore.firestore().collection("user").document(user.uid).setData(data){ _ in
                 self.dataSource.userSession = user
             }
