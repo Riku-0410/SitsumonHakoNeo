@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import SwiftUI
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

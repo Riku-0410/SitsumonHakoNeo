@@ -8,8 +8,10 @@
 import UIKit
 import SwiftUI
 class MessageListViewController: UIViewController, MessageListViewDelegate{
+
     private let dataSource: MessageListView.DataSource = .init()
-    
+    let newMessageViewController = NewMessageViewController()
+    var user:User?
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .blue
@@ -27,6 +29,7 @@ class MessageListViewController: UIViewController, MessageListViewDelegate{
             view.rightAnchor.constraint(equalTo: hostingVC.view.rightAnchor)
         ]
         NSLayoutConstraint.activate(constraints)
+
     }
     
     func messageListViewDidTapMessageCell() {
@@ -37,9 +40,21 @@ class MessageListViewController: UIViewController, MessageListViewDelegate{
     
     func messageListViewDidTapNewMessageButton() {
         let vc = NewMessageViewController()
-        present(vc, animated: true)
+        present(vc,animated: true)
     }
     
-    //この辺で普通にviewmodel.fetchMessageとかで返り値datasourceにながせばよい？
+    func newMessageViewModalDidFinished(user: User) {
+        self.newMessageViewController.dismiss(animated: true)
+        let vc = MessageDetailViewController(user:user)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 
+}
+
+extension MessageListViewController: UIAdaptivePresentationControllerDelegate {
+    func presentationControllerDidDismiss(_ presentationController: UIPresentationController) {
+        guard let user = user else {return}
+        let vc = MessageDetailViewController(user: user)
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }

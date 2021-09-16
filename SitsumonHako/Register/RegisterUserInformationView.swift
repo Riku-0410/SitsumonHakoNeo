@@ -15,17 +15,25 @@ struct RegisterUserInformationView: View {
     class DataSource: ObservableObject{
         @Published var userImage:UIImage? = nil
         @Published var userSession: FirebaseAuth.User?
-        @Published var userID:String = ""
-        @Published var nickName:String = ""
-        @Published var anoNickName:String = ""
+        @Published var isLoading:Bool = false
     }
+
+    @State var userID:String = ""
+    @State var nickName:String = ""
+    @State var anoNickName:String = ""
     @ObservedObject var dataSource: DataSource
     @StateObject var registerInformation: RegisterInformation = RegisterInformation()
     weak var delegate:RegisterUserInformationViewDelegate?
     var body: some View {
-        ScrollView{
-            registerUserImageSection
-            registerUserInformationSection
+        ZStack{
+            if dataSource.isLoading{
+                LoadingIndicatorView()
+            }else{
+                ScrollView{
+                    registerUserImageSection
+                    registerUserInformationSection
+                }
+            }
         }
     }
     
@@ -45,7 +53,6 @@ struct RegisterUserInformationView: View {
                     .background(Color.white)
                     .onTapGesture {
                         delegate?.registerUserInformationViewDidTapRegisterImage()
-                        print("didtap")
                     }
             }
             VStack(spacing:0){
@@ -63,11 +70,11 @@ struct RegisterUserInformationView: View {
     
     var registerUserInformationSection: some View {
         VStack(alignment:.leading,spacing:12){
-            CustomTextFieldView(text: $dataSource.userID,title:"ユーザーID")
-            CustomTextFieldView(text: $dataSource.nickName, title:"ニックネーム")
-            CustomTextFieldView(text: $dataSource.anoNickName, title:"匿名用ニックネーム" ,caution:"※特定できない名前")
+            CustomTextFieldView(text: $userID,title:"ユーザーID")
+            CustomTextFieldView(text: $nickName, title:"ニックネーム")
+            CustomTextFieldView(text: $anoNickName, title:"匿名用ニックネーム" ,caution:"※特定できない名前")
             Button(action:{
-                delegate?.registerUserInformationViewDidTapRegisterButton(userID: dataSource.userID, nickName: dataSource.nickName, anoNickName: dataSource.anoNickName)
+                delegate?.registerUserInformationViewDidTapRegisterButton(userID: userID, nickName: nickName, anoNickName: anoNickName)
             }){
                 Text("登録")
                     .foregroundColor(.white)
@@ -76,6 +83,7 @@ struct RegisterUserInformationView: View {
                     .padding(.horizontal, 28)
                     .frame(maxWidth:.infinity)
             }
+            .disabled(dataSource.userImage == nil ? true: false)
             .frame(maxWidth:.infinity,minHeight: 40,alignment:.center)
             .background(Color(hex:"657FAD"))
             .padding(.top,10)

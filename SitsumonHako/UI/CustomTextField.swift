@@ -48,7 +48,7 @@ struct CustomTextField: UIViewRepresentable {
     }
     
     func updateUIView(_ view: UITextField, context: Context) {
-        view.text = text
+        view.text = self.$text.wrappedValue
     }
     
 
@@ -69,6 +69,7 @@ extension CustomTextField {
         
         func textFieldDidEndEditing(_ textField: UITextField, reason: UITextField.DidEndEditingReason) {
             self.parent.isEditing = false
+            self.parent.text = textField.text ?? ""
         }
     }
 }

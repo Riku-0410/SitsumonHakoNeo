@@ -9,6 +9,11 @@ import UIKit
 import SwiftUI
 class MessageDetailViewController: UIViewController {
     private let dataSource: MessageDetailView.DataSource = .init()
+
+    convenience init(user:User) {
+        self.init(nibName: nil, bundle: nil)
+        fetchMessage(user: user)
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         let rootView = MessageDetailView(dataSource: dataSource)
@@ -24,6 +29,10 @@ class MessageDetailViewController: UIViewController {
             view.rightAnchor.constraint(equalTo: hostingVC.view.rightAnchor)
         ]
         NSLayoutConstraint.activate(constraints)
+    }
+    
+    func fetchMessage(user:User){
+        
     }
     
 

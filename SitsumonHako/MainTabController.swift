@@ -6,12 +6,35 @@
 //
 
 import UIKit
-
+import FirebaseAuth
 class MainTabController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViewControllers()
+        checkIfUserIsLoggedIn()
+//
+//        do {
+//          try Auth.auth().signOut()
+//          print("sign out")
+//        } catch let signOutError as NSError {
+//          print("Error signing out: %@", signOutError)
+//        }
+    }
+    //HACK:こいつ動かすとnavigationViewが変な挙動になる
+//    override func viewDidAppear(_ animated: Bool) {
+////
+//    }
+    
+    func checkIfUserIsLoggedIn() {
+        if Auth.auth().currentUser == nil {
+            DispatchQueue.main.async {
+                let controller = RegisterUserInformationViewController()
+                let nav = UINavigationController(rootViewController: controller)
+                nav.modalPresentationStyle = .fullScreen
+                self.present(nav, animated: true, completion: nil)
+            }
+        }
     }
     
     func configureViewControllers() {
@@ -23,6 +46,7 @@ class MainTabController: UITabBarController {
         
         tabBar.tintColor = .black
     }
+    
     
     func templateNavigationController(unselectedImage: UIImage, selectedImage: UIImage, rootViewController: UIViewController) -> UINavigationController {
         let nav = UINavigationController(rootViewController: rootViewController)
