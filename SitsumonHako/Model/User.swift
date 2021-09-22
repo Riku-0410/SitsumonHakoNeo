@@ -11,6 +11,7 @@ struct User: Identifiable {
     let profileImageUrl: String
     let username : String
     let anoname : String
+    let device : String?
     
     init(dictionary: [String: Any]){
         self.id = dictionary["uid"] as? String ?? ""
@@ -18,5 +19,6 @@ struct User: Identifiable {
         self.profileImageUrl = dictionary["profileImageUrl"] as? String ?? ""
         self.username = dictionary["nickname"] as? String ?? ""
         self.anoname = dictionary["anonickname"] as? String ?? ""
+        self.device = dictionary["device"] as? String ?? nil
     }
 }

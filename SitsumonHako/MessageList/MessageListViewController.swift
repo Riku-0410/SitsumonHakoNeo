@@ -7,9 +7,12 @@
 
 import UIKit
 import SwiftUI
+import FirebaseAuth
+import FirebaseFirestore
 class MessageListViewController: UIViewController, MessageListViewDelegate{
 
     private let dataSource: MessageListView.DataSource = .init()
+    private var recentMessagesDictionary = [String: Message]()
     let newMessageViewController = NewMessageViewController()
     var user:User?
     override func viewDidLoad() {
@@ -29,17 +32,21 @@ class MessageListViewController: UIViewController, MessageListViewDelegate{
             view.rightAnchor.constraint(equalTo: hostingVC.view.rightAnchor)
         ]
         NSLayoutConstraint.activate(constraints)
+        fetchRecentMessage()
+        
+        
 
     }
     
-    func messageListViewDidTapMessageCell() {
-        let vc = MessageDetailViewController()
+    func messageListViewDidTapMessageCell(user:User) {
+        let vc = MessageDetailViewController(user: user)
         vc.hidesBottomBarWhenPushed = true
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func messageListViewDidTapNewMessageButton() {
         let vc = NewMessageViewController()
+        vc.presentationController?.delegate = self
         present(vc,animated: true)
     }
     
@@ -48,7 +55,26 @@ class MessageListViewController: UIViewController, MessageListViewDelegate{
         let vc = MessageDetailViewController(user:user)
         self.navigationController?.pushViewController(vc, animated: true)
     }
-
+    
+    func fetchRecentMessage(){
+        guard let UID = Auth.auth().currentUser?.uid else { return }
+        let query = Firestore.firestore().collection("message").document(UID).collection("recent-messages")
+        query.order(by: "timestamp", descending: true)
+        query.addSnapshotListener{ snapshot, _ in
+            guard let changes = snapshot?.documentChanges else { return }
+            changes.forEach{ change in
+                let messageData = change.document.data()
+                let receiveUID = change.document.documentID
+                Firestore.firestore().collection("user").whereField("anouid", isEqualTo: receiveUID).getDocuments{ snapshot, _ in
+                    for document in snapshot!.documents {
+                        let recieveUserData:User = User(dictionary: document.data())
+                        self.recentMessagesDictionary[receiveUID] = Message(user: recieveUserData, dictionary: messageData)
+                        self.dataSource.recentMessage = Array(self.recentMessagesDictionary.values)
+                    }
+                }
+            }
+        }
+    }
 }
 
 extension MessageListViewController: UIAdaptivePresentationControllerDelegate {

@@ -9,16 +9,19 @@ import SwiftUI
 
 
 protocol MessageListViewDelegate: AnyObject {
-    func messageListViewDidTapMessageCell()
+    func messageListViewDidTapMessageCell(user:User)
     func messageListViewDidTapNewMessageButton()
 }
 
 struct MessageListView: View {
     
     class DataSource: ObservableObject{
-        @Published var recentMessage: [Message] = [Message(user: User(dictionary: ["id":"1","anoId":"a1","nickname":"riku","anonickname":"toku"]), dictionary: ["text":"こんにちは","toId":"2","fromId":"1","read":true,"id":123]),Message(user: User(dictionary: ["id":"1","anoId":"a1","nickname":"riku","anocnickname":"toku"]), dictionary: ["text":"こんにちは","toId":"2","fromId":"1","read":true,"id":123]),Message(user: User(dictionary: ["id":"1","anoId":"a1","nickname":"riku","anonickname":"toku"]), dictionary: ["text":"こんにちは","toId":"2","fromId":"1","read":true,"id":123]),Message(user: User(dictionary: ["id":"1","anoId":"a1","nickname":"riku","anonickname":"toku"]), dictionary: ["text":"こんにちは","toId":"2","fromId":"1","read":true,"id":123])]
+        @Published var recentMessage: [Message] = []
     }
     
+    
+    //MOCK:
+//    Message(user: User(dictionary: ["id":"1","anoId":"a1","nickname":"riku","anonickname":"toku"]), dictionary: ["text":"こんにちは","toId":"2","fromId":"1","read":true,"id":123]),Message(user: User(dictionary: ["id":"1","anoId":"a1","nickname":"riku","anocnickname":"toku"]), dictionary: ["text":"こんにちは","toId":"2","fromId":"1","read":true,"id":123]),Message(user: User(dictionary: ["id":"1","anoId":"a1","nickname":"riku","anonickname":"toku"]), dictionary: ["text":"こんにちは","toId":"2","fromId":"1","read":true,"id":123]),Message(user: User(dictionary: ["id":"1","anoId":"a1","nickname":"riku","anonickname":"toku"]), dictionary: ["text":"こんにちは","toId":"2","fromId":"1","read":true,"id":123])
     weak var delegate: MessageListViewDelegate?
     @ObservedObject var dataSource: DataSource
     
@@ -31,7 +34,7 @@ struct MessageListView: View {
                             .frame(maxWidth:.infinity, alignment: .leading)
                             .background(Color.white)
                         .onTapGesture {
-                            delegate?.messageListViewDidTapMessageCell()
+                            delegate?.messageListViewDidTapMessageCell(user:message.user)
                         }
                     }
                 }
@@ -39,6 +42,7 @@ struct MessageListView: View {
             newMessageButton
         }
     }
+    
     
     var newMessageButton: some View {
         HStack{

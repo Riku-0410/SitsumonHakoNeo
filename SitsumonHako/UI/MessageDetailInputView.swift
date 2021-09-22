@@ -25,14 +25,14 @@ struct MessageDetailInputView: View {
         return textHeight
     }
     
+    var action:() -> Void
+    
     var body: some View {
 
             HStack{
                 MessageDetailInputViewField(text: $text,height: $textHeight)
                     .cornerRadius(15)
-                Button(action:{
-                    print("tap")
-                }){
+                Button(action:action){
                     Text("送信")
                         .bold()
                         .foregroundColor(.blue)
@@ -47,7 +47,9 @@ struct MessageDetailInputView: View {
 
 struct MessageDetailInputView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageDetailInputView(text: .constant(String("_tt")),textHeight: 30)
+        MessageDetailInputView(text: .constant(String("_tt")),textHeight: 30,action: {
+            
+        })
     }
 }
 

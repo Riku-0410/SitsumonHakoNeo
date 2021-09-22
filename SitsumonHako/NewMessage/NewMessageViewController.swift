@@ -58,8 +58,21 @@ class NewMessageViewController: UIViewController,NewMessageViewDelegate {
     }
     //TODO:https://puroguradesu.hatenadiary.jp/entry/2021/01/27/034152参考にして直す
     func newMessageViewDidTapUserCell(user:User) {
-        let vc = self.presentingViewController as! MessageListViewController
+        guard let tabcon = presentingViewController as? MainTabController else {return}
+        guard let navigation = tabcon.selectedViewController as? UINavigationController else {return}
+        guard let prevView = navigation.topViewController as? MessageListViewController else {return}
+        let vc = prevView
         vc.user = user
         self.dismiss(animated: true)
+    }
+}
+
+extension NewMessageViewController {
+    override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        super.dismiss(animated: flag, completion: completion)
+        guard let presentationController = presentationController else {
+            return
+        }
+        presentationController.delegate?.presentationControllerDidDismiss?(presentationController)
     }
 }

@@ -14,14 +14,14 @@
 		327F487E26D9D428004EE48D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 327F487C26D9D428004EE48D /* LaunchScreen.storyboard */; };
 		327F493326DF76D2004EE48D /* MainTabController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F493226DF76D2004EE48D /* MainTabController.swift */; };
 		327F493926DF7FA7004EE48D /* MessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F493826DF7FA7004EE48D /* MessageListViewController.swift */; };
-		327F493B26DF7FAF004EE48D /* AnoMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F493A26DF7FAF004EE48D /* AnoMessageViewController.swift */; };
+		327F493B26DF7FAF004EE48D /* AnoMessageListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F493A26DF7FAF004EE48D /* AnoMessageListViewController.swift */; };
 		327F493D26DF7FBB004EE48D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F493C26DF7FBB004EE48D /* ProfileViewController.swift */; };
 		327F494926DFA90A004EE48D /* MessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F494826DFA90A004EE48D /* MessageListView.swift */; };
 		327F494C26DFAD6D004EE48D /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F494B26DFAD6D004EE48D /* MessageCell.swift */; };
 		327F494F26DFAED1004EE48D /* URLImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F494E26DFAED1004EE48D /* URLImageViewModel.swift */; };
 		327F495126DFB0D2004EE48D /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F495026DFB0D2004EE48D /* Message.swift */; };
 		327F495426DFB68F004EE48D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F495326DFB68F004EE48D /* User.swift */; };
-		327F495626E1121F004EE48D /* AnoMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F495526E1121F004EE48D /* AnoMessageView.swift */; };
+		327F495626E1121F004EE48D /* AnoMessageListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F495526E1121F004EE48D /* AnoMessageListView.swift */; };
 		327F495A26E1BD4C004EE48D /* MessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F495926E1BD4C004EE48D /* MessageDetailViewController.swift */; };
 		327F495C26E1BD58004EE48D /* MessageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F495B26E1BD58004EE48D /* MessageDetailView.swift */; };
 		327F496026E1BF4D004EE48D /* FlippedUpsideDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F495F26E1BF4D004EE48D /* FlippedUpsideDown.swift */; };
@@ -34,6 +34,11 @@
 		327F497026E33B4F004EE48D /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F496F26E33B4F004EE48D /* CustomTextField.swift */; };
 		327F497426E393F1004EE48D /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F497326E393F1004EE48D /* Extension.swift */; };
 		327F499926E79774004EE48D /* MessageDetailInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 327F499826E79773004EE48D /* MessageDetailInputView.swift */; };
+		32CD546926F9AED0007AD675 /* AnoMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD546826F9AED0007AD675 /* AnoMessageCell.swift */; };
+		32CD546D26F9B041007AD675 /* AnoMessageDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD546C26F9B041007AD675 /* AnoMessageDetailView.swift */; };
+		32CD546F26F9B051007AD675 /* AnoMessageDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD546E26F9B051007AD675 /* AnoMessageDetailViewController.swift */; };
+		32CD547126F9B79A007AD675 /* AnoMessageDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD547026F9B79A007AD675 /* AnoMessageDetailCell.swift */; };
+		32CD547326F9FA7E007AD675 /* AnoMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32CD547226F9FA7E007AD675 /* AnoMessage.swift */; };
 		32F6AEF326E9F1750046B462 /* NewMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F6AEF226E9F1750046B462 /* NewMessageView.swift */; };
 		32F6AEF526E9F1C80046B462 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F6AEF426E9F1C80046B462 /* UserCell.swift */; };
 		32F6AEF726E9F6180046B462 /* NewMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32F6AEF626E9F6180046B462 /* NewMessageViewController.swift */; };
@@ -54,14 +59,14 @@
 		327F487F26D9D428004EE48D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		327F493226DF76D2004EE48D /* MainTabController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabController.swift; sourceTree = "<group>"; };
 		327F493826DF7FA7004EE48D /* MessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageListViewController.swift; sourceTree = "<group>"; };
-		327F493A26DF7FAF004EE48D /* AnoMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnoMessageViewController.swift; sourceTree = "<group>"; };
+		327F493A26DF7FAF004EE48D /* AnoMessageListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnoMessageListViewController.swift; sourceTree = "<group>"; };
 		327F493C26DF7FBB004EE48D /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		327F494826DFA90A004EE48D /* MessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListView.swift; sourceTree = "<group>"; };
 		327F494B26DFAD6D004EE48D /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		327F494E26DFAED1004EE48D /* URLImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageViewModel.swift; sourceTree = "<group>"; };
 		327F495026DFB0D2004EE48D /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		327F495326DFB68F004EE48D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		327F495526E1121F004EE48D /* AnoMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnoMessageView.swift; sourceTree = "<group>"; };
+		327F495526E1121F004EE48D /* AnoMessageListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnoMessageListView.swift; sourceTree = "<group>"; };
 		327F495926E1BD4C004EE48D /* MessageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailViewController.swift; sourceTree = "<group>"; };
 		327F495B26E1BD58004EE48D /* MessageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailView.swift; sourceTree = "<group>"; };
 		327F495F26E1BF4D004EE48D /* FlippedUpsideDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlippedUpsideDown.swift; sourceTree = "<group>"; };
@@ -74,6 +79,11 @@
 		327F496F26E33B4F004EE48D /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		327F497326E393F1004EE48D /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		327F499826E79773004EE48D /* MessageDetailInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDetailInputView.swift; sourceTree = "<group>"; };
+		32CD546826F9AED0007AD675 /* AnoMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnoMessageCell.swift; sourceTree = "<group>"; };
+		32CD546C26F9B041007AD675 /* AnoMessageDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnoMessageDetailView.swift; sourceTree = "<group>"; };
+		32CD546E26F9B051007AD675 /* AnoMessageDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnoMessageDetailViewController.swift; sourceTree = "<group>"; };
+		32CD547026F9B79A007AD675 /* AnoMessageDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnoMessageDetailCell.swift; sourceTree = "<group>"; };
+		32CD547226F9FA7E007AD675 /* AnoMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnoMessage.swift; sourceTree = "<group>"; };
 		32F6AEF226E9F1750046B462 /* NewMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageView.swift; sourceTree = "<group>"; };
 		32F6AEF426E9F1C80046B462 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		32F6AEF626E9F6180046B462 /* NewMessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +130,7 @@
 		327F487026D9D426004EE48D /* SitsumonHako */ = {
 			isa = PBXGroup;
 			children = (
+				32CD546B26F9AF5B007AD675 /* AnoMessageDetail */,
 				32F6AF0626EB26350046B462 /* Service */,
 				327F495826E1BCE5004EE48D /* MessageDetail */,
 				32F6AEF126E9F1050046B462 /* NewMessage */,
@@ -143,8 +154,8 @@
 		327F493426DF7F2E004EE48D /* AnoMessage */ = {
 			isa = PBXGroup;
 			children = (
-				327F493A26DF7FAF004EE48D /* AnoMessageViewController.swift */,
-				327F495526E1121F004EE48D /* AnoMessageView.swift */,
+				327F493A26DF7FAF004EE48D /* AnoMessageListViewController.swift */,
+				327F495526E1121F004EE48D /* AnoMessageListView.swift */,
 			);
 			path = AnoMessage;
 			sourceTree = "<group>";
@@ -177,6 +188,8 @@
 				32F6AEF426E9F1C80046B462 /* UserCell.swift */,
 				32F6AEF826E9F9C60046B462 /* SearchBar.swift */,
 				3209909326F1B0A800526B52 /* LoadingIndicatorView.swift */,
+				32CD546826F9AED0007AD675 /* AnoMessageCell.swift */,
+				32CD547026F9B79A007AD675 /* AnoMessageDetailCell.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -187,6 +200,7 @@
 				327F495026DFB0D2004EE48D /* Message.swift */,
 				327F495326DFB68F004EE48D /* User.swift */,
 				32F6AF0F26EF17510046B462 /* RegisterInformation.swift */,
+				32CD547226F9FA7E007AD675 /* AnoMessage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -219,6 +233,15 @@
 				327F496B26E32E29004EE48D /* RegisterUserInformationViewController.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		32CD546B26F9AF5B007AD675 /* AnoMessageDetail */ = {
+			isa = PBXGroup;
+			children = (
+				32CD546C26F9B041007AD675 /* AnoMessageDetailView.swift */,
+				32CD546E26F9B051007AD675 /* AnoMessageDetailViewController.swift */,
+			);
+			path = AnoMessageDetail;
 			sourceTree = "<group>";
 		};
 		32F6AEF126E9F1050046B462 /* NewMessage */ = {
@@ -373,13 +396,16 @@
 				327F499926E79774004EE48D /* MessageDetailInputView.swift in Sources */,
 				327F497426E393F1004EE48D /* Extension.swift in Sources */,
 				327F495426DFB68F004EE48D /* User.swift in Sources */,
+				32CD546D26F9B041007AD675 /* AnoMessageDetailView.swift in Sources */,
 				32F6AF1026EF17510046B462 /* RegisterInformation.swift in Sources */,
+				32CD546F26F9B051007AD675 /* AnoMessageDetailViewController.swift in Sources */,
 				32F6AF0826EB26560046B462 /* AuthService.swift in Sources */,
 				327F495A26E1BD4C004EE48D /* MessageDetailViewController.swift in Sources */,
 				327F494C26DFAD6D004EE48D /* MessageCell.swift in Sources */,
+				32CD547326F9FA7E007AD675 /* AnoMessage.swift in Sources */,
 				327F496C26E32E29004EE48D /* RegisterUserInformationViewController.swift in Sources */,
 				327F493926DF7FA7004EE48D /* MessageListViewController.swift in Sources */,
-				327F495626E1121F004EE48D /* AnoMessageView.swift in Sources */,
+				327F495626E1121F004EE48D /* AnoMessageListView.swift in Sources */,
 				327F496A26E24FC9004EE48D /* RegisterTopViewController.swift in Sources */,
 				327F494926DFA90A004EE48D /* MessageListView.swift in Sources */,
 				327F496026E1BF4D004EE48D /* FlippedUpsideDown.swift in Sources */,
@@ -387,6 +413,7 @@
 				327F493326DF76D2004EE48D /* MainTabController.swift in Sources */,
 				327F496826E24459004EE48D /* RegisterTopView.swift in Sources */,
 				32F6AEF726E9F6180046B462 /* NewMessageViewController.swift in Sources */,
+				32CD546926F9AED0007AD675 /* AnoMessageCell.swift in Sources */,
 				327F497026E33B4F004EE48D /* CustomTextField.swift in Sources */,
 				32F6AEF926E9F9C60046B462 /* SearchBar.swift in Sources */,
 				327F495C26E1BD58004EE48D /* MessageDetailView.swift in Sources */,
@@ -394,7 +421,8 @@
 				3209909426F1B0A800526B52 /* LoadingIndicatorView.swift in Sources */,
 				32F6AEF526E9F1C80046B462 /* UserCell.swift in Sources */,
 				327F496226E1C09D004EE48D /* MessageDetailCell.swift in Sources */,
-				327F493B26DF7FAF004EE48D /* AnoMessageViewController.swift in Sources */,
+				32CD547126F9B79A007AD675 /* AnoMessageDetailCell.swift in Sources */,
+				327F493B26DF7FAF004EE48D /* AnoMessageListViewController.swift in Sources */,
 				327F487226D9D426004EE48D /* AppDelegate.swift in Sources */,
 				327F496526E1C134004EE48D /* MessageDetailBubble.swift in Sources */,
 				327F495126DFB0D2004EE48D /* Message.swift in Sources */,

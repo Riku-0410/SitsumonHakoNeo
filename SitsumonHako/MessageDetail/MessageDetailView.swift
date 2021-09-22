@@ -7,17 +7,21 @@
 
 import SwiftUI
 
+protocol MessageDetailViewDelegate: AnyObject{
+    func messageDetailViewDidSendMessage(messageText:String)
+}
+
 struct MessageDetailView: View {
     class DataSource: ObservableObject{
         @Published var message: [Message] = [Message(user: User(dictionary: ["id":"1","anoId":"a1","username":"riku","anoname":"toku"]), dictionary: ["text":"こんにちは","toId":"2","fromId":"1","read":true,"id":123]),Message(user: User(dictionary: ["id":"1","anoId":"a1","username":"riku","anoname":"toku"]), dictionary: ["text":"こんにちは","toId":"2","fromId":"2","read":true,"id":123]),Message(user: User(dictionary: ["id":"1","anoId":"a1","username":"riku","anoname":"toku"]), dictionary: ["text":"こんにちは","toId":"2","fromId":"1","read":true,"id":123]),Message(user: User(dictionary: ["id":"1","anoId":"a1","username":"riku","anoname":"toku"]), dictionary: ["text":"こんにちは","toId":"2","fromId":"1","read":true,"id":123])]
     }
     @State var text:String = ""
     @ObservedObject var dataSource: DataSource
-
+    weak var delegate:MessageDetailViewDelegate?
     var body: some View {
         VStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 4) {
+                VStack(alignment: .leading, spacing: 12) {
                     ForEach(dataSource.message) { message in
                         MessageDetailCell(message:message)
                     }
@@ -26,10 +30,13 @@ struct MessageDetailView: View {
                 .flippedUpsideDown()
             }
             .flippedUpsideDown()
-            MessageDetailInputView(text:$text)
+            MessageDetailInputView(text:$text,action:sendMessage)
         }
     }
     
+    func sendMessage(){
+        self.delegate?.messageDetailViewDidSendMessage(messageText: text)
+    }
 }
 
 struct MessageDetailView_Previews: PreviewProvider {

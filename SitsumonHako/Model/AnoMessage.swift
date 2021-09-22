@@ -1,13 +1,13 @@
 //
-//  Message.swift
+//  AnoMessage.swift
 //  SitsumonHako
 //
-//  Created by Rikuya Shiraishi on 2021/09/01.
+//  Created by Rikuya Shiraishi on 2021/09/21.
 //
 
 import Foundation
 import Firebase
-struct Message: Identifiable{
+struct AnoMessage: Identifiable{
     let text: String
     let user: User
     let toId: String
@@ -23,7 +23,7 @@ struct Message: Identifiable{
         self.toId = dictionary["toId"] as? String ?? ""
         self.fromId = dictionary["fromId"] as? String ?? ""
         self.read = dictionary["read"] as? Bool ?? false
-        self.isFromCurrentUser = fromId  == Auth.auth().currentUser?.uid
+        self.isFromCurrentUser = dictionary["isFromCurrentUser"] as? Bool ?? false
         self.id = dictionary["id"] as? String ?? ""
         self.timestamp = dictionary["timestamp"] as? Timestamp ?? Timestamp(date: Date())
     }

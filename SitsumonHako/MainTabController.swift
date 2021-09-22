@@ -13,13 +13,6 @@ class MainTabController: UITabBarController {
         super.viewDidLoad()
         configureViewControllers()
         checkIfUserIsLoggedIn()
-//
-//        do {
-//          try Auth.auth().signOut()
-//          print("sign out")
-//        } catch let signOutError as NSError {
-//          print("Error signing out: %@", signOutError)
-//        }
     }
     //HACK:こいつ動かすとnavigationViewが変な挙動になる
 //    override func viewDidAppear(_ animated: Bool) {
@@ -39,7 +32,7 @@ class MainTabController: UITabBarController {
     
     func configureViewControllers() {
         let message = templateNavigationController(unselectedImage: UIImage(systemName: "person.crop.circle.badge.checkmark")!, selectedImage: UIImage(systemName: "person.crop.circle.fill.badge.checkmark")!, rootViewController: MessageListViewController())
-        let anoMessage = templateNavigationController(unselectedImage: UIImage(systemName: "person.crop.circle.badge.questionmark")!, selectedImage: UIImage(systemName: "person.crop.circle.badge.questionmark")!, rootViewController: AnoMessageViewController())
+        let anoMessage = templateNavigationController(unselectedImage: UIImage(systemName: "person.crop.circle.badge.questionmark")!, selectedImage: UIImage(systemName: "person.crop.circle.badge.questionmark")!, rootViewController: AnoMessageListViewController())
         let profile = templateNavigationController(unselectedImage: UIImage(systemName: "person.crop.circle")!, selectedImage: UIImage(systemName: "person.crop.circle.fill")!, rootViewController: ProfileViewController())
             
         viewControllers = [message,anoMessage,profile]
