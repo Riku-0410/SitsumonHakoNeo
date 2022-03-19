@@ -9,7 +9,6 @@ import SwiftUI
 
 protocol AnoMessageDetailViewDelegate: AnyObject{
     func anoMessageDetailViewDidSendMessage(messageText:String)
-    func anoMessageDetailViewUpdateMessage()
 }
 
 struct AnoMessageDetailView: View {
@@ -25,42 +24,17 @@ struct AnoMessageDetailView: View {
         VStack {
             ScrollView {
                 ScrollViewReader {(proxy: ScrollViewProxy) in
-                    
-                    LazyVStack(alignment: .leading, spacing: 12) {
-                        //Lineのトークみたいにするのに技術調査が必要
-                        //あとでやるとして別に二十件までしか取れないとかでもいいかも
-    //                    if !dataSource.message.isEmpty{
-    //                        Text("heelo")
-    //                        .onAppear{
-    //                            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
-    //                                self.delegate?.anoMessageDetailViewUpdateMessage()
-    //                            }
-    //
-    //                            print("hello")
-    //                        }
-    //                    }
+                    // https://www.memory-lovers.blog/entry/2020/05/24/180000
+                    VStack(alignment: .leading, spacing: 12) {
                         ForEach(dataSource.message) { message in
                             AnoMessageDetailCell(message:message).id(message.id)
+                     
                         }
-                        .onChange(of: dataSource.didLoadFinished){_ in
-                            proxy.scrollTo(dataSource.message.last?.id, anchor: .bottom)
-                            print("print")
-                        }
-//                        .onReceive(dataSource.$message){ id in
-//                            proxy.scrollTo(dataSource.message.last?.id, anchor: .bottom)
-//                            print("print")
-//                        }
                     }
-                    //これはタイミングが悪いから？
-                    .onAppear(){
-                        proxy.scrollTo(dataSource.message.last?.id, anchor: .bottom)
-                    }
-
-    //                .flippedUpsideDown()
-
+                .flippedUpsideDown()
                 }
             }
-//            .flippedUpsideDown()
+            .flippedUpsideDown()
             MessageDetailInputView(text:$text,action:sendMessage)
         }
     }

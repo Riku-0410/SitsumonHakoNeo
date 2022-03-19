@@ -40,7 +40,7 @@ class MessageDetailViewController: UIViewController , MessageDetailViewDelegate{
         self.user = user
         guard let currentUID = Auth.auth().currentUser?.uid else {return}
         let anoID = user.anoId
-        let query = Firestore.firestore().collection("message").document(currentUID).collection(anoID)
+        let query = Firestore.firestore().collection("message").document(currentUID).collection(anoID).limit(to:20).order(by: "timestamp", descending: true)
         query.addSnapshotListener{ snapshot,err in
             guard let addChange = snapshot?.documentChanges.filter({$0.type == .added}) else {return}
             addChange.forEach{ snapshot in

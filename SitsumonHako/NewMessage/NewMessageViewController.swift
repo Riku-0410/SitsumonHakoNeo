@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 import FirebaseFirestore
-
+import FirebaseAuth
 
 enum SearchViewModelConfiguration{
     case search
@@ -44,18 +44,28 @@ class NewMessageViewController: UIViewController,NewMessageViewDelegate {
         // Dispose of any resources that can be recreated.
     }
     func fetchUsers(forConfig config: SearchViewModelConfiguration){
-        Firestore.firestore().collection("user").getDocuments{ snapshot, _ in
-            guard let documents = snapshot?.documents else { return }
-            let users = documents.map({ User(dictionary: $0.data() )})
-            switch config{
-            case .newMessage:
-                self.dataSource.user = users
-            case .search:
-                self.dataSource.user = documents.map({ User(dictionary: $0.data())})
-                
+        guard let currentUser = Auth.auth().currentUser else {
+            return
+        }
+        print(currentUser.uid)
+        Firestore.firestore().collection("user").document(currentUser.uid).getDocument(){document,error in
+            guard let document = document else {return}
+            Firestore.firestore().collection("user").end(beforeDocument: document).limit(to:10).getDocuments{ snapshot, _ in
+                guard let documents = snapshot?.documents else { return }
+                let users = documents.map({ User(dictionary: $0.data() )})
+                switch config{
+                case .newMessage:
+                    self.dataSource.user = users
+                case .search:
+                    self.dataSource.user = documents.map({ User(dictionary: $0.data())})
+                    
+                }
             }
+
         }
     }
+ 
+    
     //TODO:https://puroguradesu.hatenadiary.jp/entry/2021/01/27/034152参考にして直す
     func newMessageViewDidTapUserCell(user:User) {
         guard let tabcon = presentingViewController as? MainTabController else {return}
@@ -64,6 +74,18 @@ class NewMessageViewController: UIViewController,NewMessageViewDelegate {
         let vc = prevView
         vc.user = user
         self.dismiss(animated: true)
+    }
+    
+    func newMessageViewSearchUser(text: String) {
+        guard let currentUser = Auth.auth().currentUser else {
+            return
+        }
+        Firestore.firestore().collection("user").whereField("anouid", isEqualTo: text).limit(to:1).getDocuments{ snapshot, _ in
+            guard let documents = snapshot?.documents else { return }
+            let users = documents.map({ User(dictionary: $0.data() )})
+            self.dataSource.user = users.filter{ !$0.isCurrentUser}
+        }
+
     }
 }
 

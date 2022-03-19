@@ -4,7 +4,7 @@
 //
 //  Created by Rikuya Shiraishi on 2021/09/01.
 //
-
+import FirebaseAuth
 struct User: Identifiable {
     let id : String
     let anoId: String
@@ -12,6 +12,7 @@ struct User: Identifiable {
     let username : String
     let anoname : String
     let device : String?
+    var isCurrentUser: Bool { return Auth.auth().currentUser?.uid == self.id }
     
     init(dictionary: [String: Any]){
         self.id = dictionary["uid"] as? String ?? ""

@@ -9,6 +9,7 @@ import SwiftUI
 
 protocol NewMessageViewDelegate:AnyObject {
     func newMessageViewDidTapUserCell(user:User)
+    func newMessageViewSearchUser(text:String)
 }
 struct NewMessageView: View {
     class DataSource: ObservableObject{
@@ -23,15 +24,19 @@ struct NewMessageView: View {
     
     weak var delegate:NewMessageViewDelegate?
     @ObservedObject var dataSource: DataSource
+    @State var searchText:String = ""
     var body: some View {
         ScrollView(){
+            SearchBar(text: $searchText, placeholder: "id検索")
             VStack(spacing:0){
                 ForEach(dataSource.user){ user in
                     UserCell(user: user).onTapGesture {
                         self.delegate?.newMessageViewDidTapUserCell(user:user)
                     }
                 }
-            }
+            }.onChange(of: searchText, perform: { _ in
+                self.delegate?.newMessageViewSearchUser(text: searchText)
+            })
         }
     }
 }

@@ -10,6 +10,7 @@ import SwiftUI
 import FirebaseAuth
 import FirebaseFirestore
 class AnoMessageDetailViewController: UIViewController, AnoMessageDetailViewDelegate{
+    
 
     private let dataSource: AnoMessageDetailView.DataSource = .init()
     var lastDoc :QueryDocumentSnapshot!
@@ -39,38 +40,29 @@ class AnoMessageDetailViewController: UIViewController, AnoMessageDetailViewDele
     }
     //:Anomessage使ってcurrentUserかどうか判断
     func fetchMessage(user:User, completion: @escaping (Bool) -> ()) {
+
         self.user = user
         Firestore.firestore().collection("user").document(Auth.auth().currentUser!.uid).getDocument{ document,error in
             guard let data = document?.data() else {return}
             let anoUID = data["anouid"] as! String
+            let currentUser = User(dictionary: data)
             let UID = user.id
-            let query = Firestore.firestore().collection("message").document(anoUID).collection(UID)
+            let query = Firestore.firestore().collection("message").document(anoUID).collection(UID).limit(to:20).order(by: "timestamp" , descending: true)
             query.addSnapshotListener{ snapshot, _ in
-                guard let addChange = snapshot?.documentChanges.filter({$0.type == .added}) else {return}
-                addChange.forEach{ snapshot in
-                    
-                    var messageData = snapshot.document.data()
+                snapshot!.documents.forEach{ document in
+                    var messageData = document.data()
                     let fromId = messageData["fromId"] as! String
-                    let currentUID = Auth.auth().currentUser!.uid
                     if fromId == anoUID{
-                        Firestore.firestore().collection("user").document(currentUID).getDocument { snapshot, _ in
                             messageData["isFromCurrentUser"] = true
-
-                            guard let data = snapshot?.data() else {return}
-                            let user = User(dictionary: data)
-                            self.dataSource.message.append(AnoMessage(user: user, dictionary: messageData))
+                            self.dataSource.message.append(AnoMessage(user: currentUser, dictionary: messageData))
                             self.dataSource.message.sort(by:{ $0.timestamp.dateValue() < $1.timestamp.dateValue() })
-                            self.dataSource.didLoadFinished = true
-                            print(1)
-                        }
+                        
                     }else{
                         guard let user = self.user else { return }
                         messageData["isFromCurrentUser"] = false
                         self.dataSource.message.append(AnoMessage(user:user ,dictionary: messageData))
-                        self.dataSource.didLoadFinished = true
                     }
                 }
-                self.lastDoc = snapshot!.documents.last
             }
             
         }
@@ -102,40 +94,6 @@ class AnoMessageDetailViewController: UIViewController, AnoMessageDetailViewDele
             currentRecentRef.document(UID).setData(data)
             receivingUserRef.document(messageID).setData(data)
             receivingRecentRef.document(anoUID).setData(data)
-            
-        }
-    }
-    
-    func anoMessageDetailViewUpdateMessage() {
-        Firestore.firestore().collection("user").document(Auth.auth().currentUser!.uid).getDocument{ document,error in
-            guard let data = document?.data() else {return}
-            let anoUID = data["anouid"] as! String
-            guard let UID = self.user?.id else { return }
-            let query = Firestore.firestore().collection("message").document(anoUID).collection(UID).start(afterDocument: self.lastDoc).limit(to: 20)
-            query.addSnapshotListener{ snapshot, _ in
-                guard let addChange = snapshot?.documentChanges.filter({$0.type == .added}) else {return}
-                addChange.forEach{ snapshot in
-                    var messageData = snapshot.document.data()
-                    let fromId = messageData["fromId"] as! String
-                    let currentUID = Auth.auth().currentUser!.uid
-                    if fromId == anoUID{
-                        Firestore.firestore().collection("user").document(currentUID).getDocument { snapshot, _ in
-                            messageData["isFromCurrentUser"] = true
-
-                            guard let data = snapshot?.data() else {return}
-                            let user = User(dictionary: data)
-                            self.dataSource.message.append(AnoMessage(user: user, dictionary: messageData))
-                            self.dataSource.message.sort(by:{ $0.timestamp.dateValue() < $1.timestamp.dateValue() })
-                        }
-                    }else{
-                        guard let user = self.user else { return }
-                        messageData["isFromCurrentUser"] = false
-                        self.dataSource.message.append(AnoMessage(user:user ,dictionary: messageData))
-                    }
-                }
-                
-                self.lastDoc = snapshot!.documents.last
-            }
             
         }
     }
